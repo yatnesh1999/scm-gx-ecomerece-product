@@ -1,109 +1,25 @@
-├── .gradle
-    ├── 8.14.3
-    │   ├── checksums
-    │   │   ├── checksums.lock
-    │   │   ├── md5-checksums.bin
-    │   │   └── sha1-checksums.bin
-    │   ├── executionHistory
-    │   │   ├── executionHistory.bin
-    │   │   └── executionHistory.lock
-    │   ├── fileChanges
-    │   │   └── last-build.bin
-    │   ├── fileHashes
-    │   │   ├── fileHashes.bin
-    │   │   ├── fileHashes.lock
-    │   │   └── resourceHashesCache.bin
-    │   └── gc.properties
-    ├── buildOutputCleanup
-    │   ├── buildOutputCleanup.lock
-    │   ├── cache.properties
-    │   └── outputFiles.bin
-    ├── file-system.probe
-    └── vcs-1
-    │   └── gc.properties
-├── HELP.md
-├── build.gradle
-├── build
-    ├── classes
-    │   └── java
-    │   │   └── main
-    │   │       └── com
-    │   │           └── ecomerece
-    │   │               └── product
-    │   │                   ├── Controller
-    │   │                       └── ProductQueryController.class
-    │   │                   ├── Domain
-    │   │                       └── ProductEntity.class
-    │   │                   ├── Dto
-    │   │                       ├── Request
-    │   │                       │   └── ProductDtoRequest.class
-    │   │                       └── Response
-    │   │                       │   └── ProductDtoResponse.class
-    │   │                   ├── Mapper
-    │   │                       ├── ProductMapper.class
-    │   │                       └── ProductMapperImpl.class
-    │   │                   ├── ProductApplication.class
-    │   │                   ├── Repository
-    │   │                       └── ProductQueryRepository.class
-    │   │                   └── Service
-    │   │                       └── ProductQueryService.class
-    ├── generated
-    │   └── sources
-    │   │   └── annotationProcessor
-    │   │       └── java
-    │   │           └── main
-    │   │               └── com
-    │   │                   └── ecomerece
-    │   │                       └── product
-    │   │                           └── Mapper
-    │   │                               └── ProductMapperImpl.java
-    ├── reports
-    │   └── problems
-    │   │   └── problems-report.html
-    ├── resources
-    │   └── main
-    │   │   └── application.properties
-    └── tmp
-    │   └── compileJava
-    │       └── previous-compilation-data.bin
-├── compose.yaml
-├── gradle
-    └── wrapper
-    │   ├── gradle-wrapper.jar
-    │   └── gradle-wrapper.properties
-├── gradlew
-├── gradlew.bat
-├── settings.gradle
-└── src
-    ├── main
-        ├── java
-        │   └── com
-        │   │   └── ecomerece
-        │   │       └── product
-        │   │           ├── Controller
-        │   │               ├── ProductCommandController.java
-        │   │               └── ProductQueryController.java
-        │   │           ├── Domain
-        │   │               └── ProductEntity.java
-        │   │           ├── Dto
-        │   │               ├── Request
-        │   │               │   └── ProductDtoRequest.java
-        │   │               └── Response
-        │   │               │   └── ProductDtoResponse.java
-        │   │           ├── Mapper
-        │   │               └── ProductMapper.java
-        │   │           ├── ProductApplication.java
-        │   │           ├── Repository
-        │   │               └── ProductQueryRepository.java
-        │   │           └── Service
-        │   │               ├── ProductCommandService.java
-        │   │               └── ProductQueryService.java
-        └── resources
-        │   └── application.properties
-    └── test
-        └── java
-            └── com
-                └── ecomerece
-                    └── product
-                        └── ProductApplicationTests.java
+# 🚀 Spring Boot Microservices Project
 
+A production-ready microservices-based application built using **Spring Boot**, **Java 21**, **Kafka**, **Swagger/OpenAPI**, **Docker**, **Kubernetes**, **PostgreSQL**, and more. This project follows modern microservice architecture principles including service decoupling, scalability, observability, and CI/CD readiness.
+
+---
+
+## 📌 Table of Contents
+
+- [Project Architecture](#-project-architecture)
+- [Tech Stack](#-tech-stack)
+- [Services Overview](#-services-overview)
+- [Getting Started](#-getting-started)
+- [API Documentation](#-api-documentation)
+- [Database Configuration](#-database-configuration)
+- [Kafka Setup](#-kafka-setup)
+- [Docker and Kubernetes](#-docker-and-kubernetes)
+- [Testing](#-testing)
+- [Contributing](#-contributing)
+- [License](#-license)
+
+---
+
+## 🏗️ Project Architecture
+
+This project is designed following **microservices architecture** principles. Each service is independently deployable and communicates over REST and Kafka events.
