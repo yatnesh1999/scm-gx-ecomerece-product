@@ -1,6 +1,7 @@
 package com.ecomerece.product.Mapper;
 
 import com.ecomerece.product.Domain.ProductEntity;
+import com.ecomerece.product.Dto.Request.ProductDtoRequest;
 import com.ecomerece.product.Dto.Response.ProductDtoResponse;
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2025-08-24T14:49:12+0530",
+    date = "2025-08-29T10:52:10+0530",
     comments = "version: 1.5.5.Final, compiler: IncrementalProcessingEnvironment from gradle-language-java-8.14.3.jar, environment: Java 21.0.4 (Oracle Corporation)"
 )
 @Component
@@ -50,5 +51,28 @@ public class ProductMapperImpl implements ProductMapper {
         }
 
         return list;
+    }
+
+    @Override
+    public ProductEntity toEntity(ProductDtoRequest request) {
+        if ( request == null ) {
+            return null;
+        }
+
+        Long productId = null;
+        String productName = null;
+        String productDescription = null;
+        Long productPrice = null;
+        String productCategory = null;
+
+        productId = request.id();
+        productName = request.productName();
+        productDescription = request.productDescription();
+        productPrice = request.productPrice();
+        productCategory = request.productCategory();
+
+        ProductEntity productEntity = new ProductEntity( productId, productName, productDescription, productPrice, productCategory );
+
+        return productEntity;
     }
 }
