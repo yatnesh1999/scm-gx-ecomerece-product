@@ -31,6 +31,7 @@ on:
     branches: [ "main" ]
 
 env:
+  SONAR_LOGIN: yatnesh1999-tkBxp@github
   AWS_REGION: us-east-1
   ECR_REPOSITORY: yatnesh1999/scm-gx-ecomerece-product           # set this to your Amazon ECR repository name
   ECS_SERVICE: ecomerece-product-service                 # set this to your Amazon ECS service name
