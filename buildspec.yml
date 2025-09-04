@@ -7,25 +7,24 @@ phases:
       docker: 20
     commands:
       - echo Installing dependencies...
+      - chmod +x gradlew     # Set execute permissions here in install phase
 
   pre_build:
     commands:
-      - echo Granting execute permissions to gradlew...
-      - chmod +x gradlew
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
 
   build:
     commands:
-      - echo Building the Spring Boot app...
+      - echo Starting gradle build...
       - ./gradlew build -x test
       - echo Building Docker image...
-      - docker build -t ecomerece-product-app .
-      - docker tag ecomerece-product-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/springboot-app:latest
+      - docker build -t springboot-app .
+      - docker tag springboot-app:latest $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/springboot-app:latest
 
   post_build:
     commands:
-      - echo Pushing Docker image to ECR...
+      - echo Pushing Docker image...
       - docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/springboot-app:latest
 
 artifacts:
