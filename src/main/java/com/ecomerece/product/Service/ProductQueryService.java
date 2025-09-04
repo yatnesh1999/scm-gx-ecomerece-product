@@ -25,4 +25,9 @@ public class ProductQueryService {
         List<ProductEntity> data = productQueryRepository.findAll();
         return productMapper.toProductDetailsDto(data);
     }
+
+    public List<ProductDtoResponse> getProductByCategory(String category){
+        List<ProductEntity> data = productQueryRepository.findByProductCategory(category);
+        return productMapper.toProductDetailsDto(data);
+    }
 }

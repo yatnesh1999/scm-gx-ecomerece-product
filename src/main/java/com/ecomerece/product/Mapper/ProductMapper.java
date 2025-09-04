@@ -21,4 +21,5 @@ public interface ProductMapper {
     @Mapping(source = "id", target = "productId")
     ProductEntity toEntity(ProductDtoRequest request);
 
+
 }

@@ -1,0 +1,24 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Java
+*.class
+
+# Logs
+*.log
+
+# IDEs
+/.idea/
+/*.iml
+*.ipr
+*.iws
+*.vs
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+.env
