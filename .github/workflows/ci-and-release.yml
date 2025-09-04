@@ -65,13 +65,9 @@ jobs:
       id: login-ecr
       uses: aws-actions/amazon-ecr-login@v1
 
-    - name: sonar-quality-gate
-      # You may pin to the exact commit or the version.
-      # uses: dieuhd/sonar-quality-gate@82d7e98f19cc855c9845f0cefc786632dbd40101
-      uses: dieuhd/sonar-quality-gate@v1
-      with:
-        # The authentication token or login of a SonarQube user with Execute Analysis permission on the project.
-        login: ${{ env.SONAR_LOGIN }}
+    - name: Run sonar-quality-gate CLI only on PRs
+      if: github.event_name == 'pull_request'
+      run: sonar-quality-gate
 
     - name: Build, tag, and push image to Amazon ECR
       id: build-image
